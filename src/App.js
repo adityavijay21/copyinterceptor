@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React from 'react';
+import CopyTextInterceptor from './CopyTextInterceptor';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className="app-container">
+      <header className="app-header">
+        <h1 className="app-title">🔒 Secure Content App</h1>
+        <p className="app-subtitle">
+          Protect your content with advanced copy protection.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+
+      <main className="app-content">
+        <section className="card-section">
+          <div className="card">
+            <h2>Protected Content</h2>
+            <p className="protected-text">
+              This content is protected. Any attempt to copy this text will result in 
+              a custom message being copied instead. Try it out!
+            </p>
+          </div>
+
+          <div className="card">
+            <h2>How It Works</h2>
+            <ul className="info-list">
+              <li>
+                Copy attempts are intercepted and replaced with a custom message.
+              </li>
+              <li>
+                This ensures your content remains secure and properly attributed.
+              </li>
+              <li>
+                Works dynamically to safeguard all text on the page.
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <footer className="app-footer">
+        <p>&copy; 2024 Secure Content App. All rights reserved.</p>
+      </footer>
+
+      <CopyTextInterceptor />
     </div>
   );
-}
+};
 
 export default App;
